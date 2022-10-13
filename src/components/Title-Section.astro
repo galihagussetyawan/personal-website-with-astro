@@ -6,6 +6,12 @@ export interface Props {
 const { title } = Astro.props;
 ---
 
-<div>
+<div class="underline">
     <p>{title}</p>
 </div>
+
+<style>
+    .underline {
+        border-bottom: 1px solid gainsboro;
+    }
+</style>
