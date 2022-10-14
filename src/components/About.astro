@@ -1,19 +1,41 @@
 ---
 import TitleSection from "./Title-Section.astro";
+import { Image } from "@astrojs/image/components";
+import profileImage from "../../public/profile.jpg";
 ---
 
-<div>
+<div id="about" class="mt-10 md:px-10 space-y-10">
     <TitleSection title="About Me" />
-    <h3>A few words about me</h3>
 
-    <div class="container">
-        <p>desc</p>
-        <span>images</span>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+        <div class="flex flex-col justify-center space-y-10">
+            <h3 class="text-4xl">A few words about me</h3>
+            <p class="leading-relaxed">
+                Hi, I'm Daniel, a freelance web designer enjoying life in lovely
+                Bournemouth, UK. I'm also known under the name of Aspectify
+                Design. I'm young and passionate about my work, and I specialise
+                in delivering digital services including bespoke web design,
+                Webflow development and branding. As a web designer I believe
+                that good design is all about finding the right balance between
+                form and function. My goal is to create beautiful and
+                user-friendly designs that help my clients achieve their
+                business goals. If you're looking for a graphic or web designer
+                who can help you take your business to the next level, don't
+                hesitate to get in touch. I can't wait to get started on your
+                project!
+            </p>
+            <a href="/about">
+                <button
+                    class="w-1/2 md:w-3/12 py-3 rounded-full text-slate-50 bg-black"
+                    >Read More</button
+                >
+            </a>
+        </div>
+        <Image
+            src={profileImage}
+            alt="asdasdasd"
+            loading="lazy"
+            class="md:w-1/2 h-96 rounded-xl m-auto"
+        />
     </div>
 </div>
-
-<style>
-    .container {
-        display: grid;
-    }
-</style>
