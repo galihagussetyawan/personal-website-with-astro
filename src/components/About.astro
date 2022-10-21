@@ -4,7 +4,7 @@ import { Image } from "@astrojs/image/components";
 import profileImage from "../../public/profile.jpg";
 ---
 
-<div id="about" class="mt-10 md:px-10 space-y-10">
+<div id="about" class="mt-5 md:px-20 lg:px-40 space-y-10">
     <TitleSection title="About Me" />
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
@@ -24,18 +24,20 @@ import profileImage from "../../public/profile.jpg";
                 hesitate to get in touch. I can't wait to get started on your
                 project!
             </p>
-            <a href="/about">
+            <a aria-label="read more about me" href="/about">
                 <button
-                    class="w-1/2 md:w-3/12 py-3 rounded-full text-slate-50 bg-black"
-                    >Read More</button
-                >
+                    class="w-1/2 lg:w-3/12 py-3 rounded-full text-slate-50 bg-black"
+                    >Read More
+                </button>
             </a>
         </div>
         <Image
+            loading={"lazy"}
             src={profileImage}
-            alt="asdasdasd"
-            loading="lazy"
-            class="md:w-1/2 h-96 rounded-xl m-auto"
+            alt="assss"
+            quality={100}
+            format={"webp"}
+            class="md:w-3/4 rounded-xl md:m-auto"
         />
     </div>
 </div>

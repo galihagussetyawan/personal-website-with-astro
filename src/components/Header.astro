@@ -2,9 +2,27 @@
     <nav
         class="w-full md:h-[5vh] flex justify-between md:justify-center items-center py-5 gap-10"
     >
-        <a class="cursor-pointer" href="/">Home</a>
-        <a class="cursor-pointer" href="/about">About</a>
+        <a aria-label="link" class="cursor-pointer hover:font-semibold" href="/"
+            >Home</a
+        >
+        <a aria-label="link" class="cursor-pointer" href="/about" rel="prefetch"
+            >About</a
+        >
         <span class="cursor-pointer">Portfolio</span>
         <span class="cursor-pointer">All Services</span>
     </nav>
 </header>
+
+<script is:inline>
+    const linkElements = document.querySelectorAll('[aria-label="link"]');
+    let pathname = window?.location?.pathname;
+
+    linkElements?.forEach((el) => {
+        if (el.getAttribute("href") === pathname) {
+            el.setAttribute(
+                "class",
+                "font-semibold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-orange-600"
+            );
+        }
+    });
+</script>
