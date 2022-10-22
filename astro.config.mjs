@@ -10,7 +10,10 @@ import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
+import compress from "astro-compress";
+
+// https://astro.build/config
 export default defineConfig({
   site: 'https://galihagussetyawan.xyz',
-  integrations: [tailwind(), image(), sitemap()],
+  integrations: [tailwind(), image(), sitemap(), compress()]
 });
