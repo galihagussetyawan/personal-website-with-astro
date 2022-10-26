@@ -1,6 +1,6 @@
-<header>
+<header id="header">
     <nav
-        class="w-full md:h-[5vh] flex justify-between md:justify-center items-center py-5 gap-10"
+        class="w-full md:h-[5vh] flex justify-between md:justify-center items-center py-5 gap-10 text-[0.8rem] sm:text-[1rem]"
     >
         <a aria-label="link" class="cursor-pointer hover:font-semibold" href="/"
             >Home</a
@@ -15,6 +15,8 @@
 
 <script is:inline>
     const linkElements = document.querySelectorAll('[aria-label="link"]');
+    const header = document.getElementById("header");
+
     let pathname = window?.location?.pathname;
 
     linkElements?.forEach((el) => {
@@ -28,4 +30,16 @@
             );
         }
     });
+
+    window.onscroll = () => {
+        if (this.oldScroll > this.scrollY) {
+            header.setAttribute(
+                "class",
+                "sticky top-0 transition-all ease-in-out duration-200 bg-[#f6f6f6]"
+            );
+        } else {
+            header.setAttribute("class", "block  -translate-y-10");
+        }
+        this.oldScroll = this.scrollY;
+    };
 </script>
